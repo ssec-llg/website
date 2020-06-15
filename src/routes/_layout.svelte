@@ -1,6 +1,7 @@
 <script>
+  import "./_styles.svelte";
   import { windowWidth } from "../stores/app";
-  import Nav from "../components/Nav.svelte";
+  import Nav from "../components/Navbar/Nav.svelte";
 
   export let segment;
 </script>
@@ -9,6 +10,6 @@
 
 <Nav {segment} />
 
-<main class="">
+<main>
   <slot />
 </main>
