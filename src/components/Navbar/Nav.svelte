@@ -65,7 +65,7 @@
     <div class="flex flex-no-wrap" transition:fly={{ x: 200 }}>
       {#each $navbar.menuItems as item}
         <a
-          class="px-4 py-2 tracking-tight rounded text-green-600 hover:text-green-700"
+          class="px-4 py-2 tracking-tight rounded text-green-600 hover:font-semibold"
           href="#{item.name}"
           on:click|preventDefault={linkScrollTo}>
           {item.title}
