@@ -18,15 +18,27 @@
       Made with
       <i class="icon text-sm">favorite</i>
       by
-      <a href="https://ssec.co.id">{$appTitle} Lubuklinggau</a>
+      <a href=".">{$appTitle} Lubuklinggau</a>
     </p>
     <p>
       Built using
-      <a href="https://sapper.svelte.dev/">Sapper</a>
+      <a
+        href="https://sapper.svelte.dev/"
+        target="_blank"
+        rel="noopener noreferrer">
+        Sapper
+      </a>
       &
-      <a href="https://tailwindcss.com/">Tailwind</a>
+      <a
+        href="https://tailwindcss.com/"
+        target="_blank"
+        rel="noopener noreferrer">
+        Tailwind
+      </a>
       hosted by
-      <a href="https://vercel.com/">Vercel</a>
+      <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">
+        Vercel
+      </a>
     </p>
     <p>©2020. All Rights Reserved</p>
   </div>
