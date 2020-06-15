@@ -1,14 +1,15 @@
 <script>
   import { fly } from "svelte/transition";
-  import { breakpoints, navbar } from "../stores/app";
-
-  $: title = $breakpoints.xs ? "Silampari Sriwijaya Eye Centre" : "SSEC";
+  import { linkScrollTo } from "../../utils/actions";
+  import { breakpoints, navbar, appTitle } from "../../stores/app";
 
   export let segment;
   console.log(segment);
 </script>
 
-<nav class="flex items-center justify-between flex-wrap p-3 md:p-6 shadow">
+<nav
+  class="fixed flex bg-white flex-no-wrap items-center justify-between shadow
+  w-full p-3 md:p-5">
 
   <!-- Brand -->
   <div class="flex items-center flex-shrink-0 text-green-600 mr-6">
@@ -56,8 +57,22 @@
         12.379595,-12.50983 2.91319,-1.96137 3.54056,-2.6878 2.74557,-3.17913
         -0.0315,-0.0195 -0.0798,-0.0311 -0.14366,-0.0351 z" />
     </svg>
-    <span class="font-semibold text-xl tracking-tight">{title}</span>
+    <span class="text-xl tracking-tight">{$appTitle}</span>
   </div>
+
+  <!-- Menu button on desktop -->
+  {#if $breakpoints.lg}
+    <div class="flex flex-no-wrap" transition:fly={{ x: 200 }}>
+      {#each $navbar.menuItems as item}
+        <a
+          class="px-4 py-2 tracking-tight rounded text-green-600 hover:text-green-700"
+          href="#{item.name}"
+          on:click|preventDefault={linkScrollTo}>
+          {item.title}
+        </a>
+      {/each}
+    </div>
+  {/if}
 
   <!-- Menu button on mobile -->
   {#if !$breakpoints.lg}
@@ -88,11 +103,11 @@
           transition:fly={{ duration: 300, y: -5 }}
           class="absolute w-48 right-0 bg-white max-w-md rounded shadow-xl
           border border-gray-300 py-2 z-10">
-          <a class="block px-4 py-2" href=".">Pelayanan</a>
-          <a class="block px-4 py-2" href=".">Dokter</a>
-          <a class="block px-4 py-2" href=".">Jadwal</a>
-          <a class="block px-4 py-2" href=".">Kontak</a>
-          <a class="block px-4 py-2" href=".">Tentang</a>
+          <a class="block px-4 py-2 hover:bg-gray-200" href=".">Pelayanan</a>
+          <a class="block px-4 py-2 hover:bg-gray-200" href=".">Dokter</a>
+          <a class="block px-4 py-2 hover:bg-gray-200" href=".">Jadwal</a>
+          <a class="block px-4 py-2 hover:bg-gray-200" href=".">Kontak</a>
+          <a class="block px-4 py-2 hover:bg-gray-200" href=".">Tentang</a>
         </div>
       {/if}
     </div>
