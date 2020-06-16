@@ -1,17 +1,18 @@
 <script>
+  import { observeElement } from "../utils/actions";
+  import Main from "../components/Section/Main.svelte";
+  import Service from "../components/Section/Service.svelte";
   import Footer from "../components/Footer/Footer.svelte";
+
+  observeElement("section");
 </script>
 
 <svelte:head>
   <title>Silampari Sriwijaya Eye Centre Lubuklinggau</title>
 </svelte:head>
 
-<section class="flex h-screen">
-  <div class="m-auto">
-    <p>
-      <strong>Klinik Utama Mata Silampari Sriwijaya Eye Centre</strong>
-    </p>
-  </div>
-</section>
+<Main />
+
+<Service />
 
 <Footer />

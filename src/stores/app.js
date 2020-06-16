@@ -17,20 +17,27 @@ export const navbar = (function createNavStore() {
   const init = {
     menuMobileShown: false,
     menuItems: [
-      { name: "service", title: "PELAYANAN", active: false },
-      { name: "doctor", title: "DOKTER", active: false },
-      { name: "schedule", title: "JADWAL", active: false },
-      { name: "contact", title: "KONTAK", active: false },
-      { name: "about", title: "TENTANG", active: false },
+      { name: "service", title: "Pelayanan", active: false },
+      { name: "doctor", title: "Dokter", active: false },
+      { name: "schedule", title: "Jadwal", active: false },
+      { name: "contact", title: "Kontak", active: false },
+      { name: "about", title: "Tentang", active: false },
     ]
   }
   const store = writable(init)
-  return {
-    ...store,
-    toggleMenuMobile: () => store.update(p => ({ ...p, menuMobileShown: !p.menuMobileShown })),
-    setActiveMenu: (name) => store.update(p => ({
+
+  function toggleMenuMobile() {
+    store.update(p => ({ ...p, menuMobileShown: !p.menuMobileShown }))
+  }
+
+  function setActiveMenu(name) {
+    store.update(p => ({
       ...p,
       menuItems: p.menuItems.map(m => ({ ...m, active: m.name === name }))
     }))
   }
+  
+  return { ...store, toggleMenuMobile, setActiveMenu }
 })()
+
+export const navLift = derived(navbar, $s => $s.menuItems.map(i => i.active).some(a => a))

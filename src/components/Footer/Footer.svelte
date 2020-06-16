@@ -4,7 +4,7 @@
 
 <style>
   a {
-    @apply text-green-900;
+    @apply text-green-600;
   }
 
   a:hover {
@@ -12,12 +12,14 @@
   }
 </style>
 
-<footer class="text-center bg-white w-full px-2 md:px-6 py-6">
+<footer
+  class="text-center text-xs sm:text-base bg-white w-full px-2 md:px-6 py-6
+  leading-snug">
   <div class="p-2 md:p-4">
-    <p>
-      Made with
-      <i class="icon text-sm">favorite</i>
-      by
+    <p class="flex items-center justify-center">
+      Made with&NonBreakingSpace;
+      <i class="icon">favorite</i>
+      &NonBreakingSpace;by&NonBreakingSpace;
       <a href=".">{$appTitle} Lubuklinggau</a>
     </p>
     <p>
@@ -40,6 +42,6 @@
         Vercel
       </a>
     </p>
-    <p>©2020. All Rights Reserved</p>
+    <p>&copy;2020 All Rights Reserved</p>
   </div>
 </footer>

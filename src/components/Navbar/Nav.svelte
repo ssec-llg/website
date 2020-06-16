@@ -1,71 +1,37 @@
 <script>
   import { fly } from "svelte/transition";
-  import { linkScrollTo } from "../../utils/actions";
+  import { linkScrollTo, clickOutside } from "../../utils/actions";
   import { breakpoints, navbar, appTitle } from "../../stores/app";
+  import Logo from "../Site/Logo.svelte";
 
-  export let segment;
-  console.log(segment);
+  export let fixed = false;
 </script>
 
 <nav
-  class="fixed flex bg-white flex-no-wrap items-center justify-between shadow
-  w-full p-3 md:p-5">
+  class:fixed
+  class="flex flex-no-wrap items-center justify-between sm:px-12 w-full"
+  class:h-20={!fixed}
+  class:bg-white={fixed}
+  class:shadow={fixed}>
 
   <!-- Brand -->
-  <div class="flex items-center flex-shrink-0 text-green-600 mr-6">
-    <svg
-      class="fill-current h-8 w-10 mr-2"
-      width="243"
-      height="125"
-      viewBox="0 0 243 125"
-      xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M 105.12273,-0.12490705 C 70.343945,-0.27985706 37.058502,12.571633
-        7.1462842,37.754953 c -4.293594,3.61481 -7.61457398,6.79803
-        -7.09207298,6.79803 0.738938,0 4.13479498,-2.02952 10.44329178,-6.24148
-        10.905701,-7.28134 19.057419,-11.87578 28.356925,-15.98352
-        15.255282,-6.73852 29.534545,-10.60395 45.021027,-12.18685
-        4.66482,-0.47678 7.92266,-0.55599 16.404155,-0.3999802 13.02766,0.23964
-        19.02131,0.9366602 31.39705,3.6519802 25.18774,5.52634 53.87443,19.0882
-        80.43334,38.0261 2.13414,1.52176 4.35647,2.97447 4.93871,3.22823
-        0.80213,0.34958 3.96477,0.46374 13.05295,0.46973 6.59694,0.005
-        12.20893,-0.1272 12.47056,-0.293 0.73954,-0.46868 0.34757,-1.45755
-        -1.00511,-2.5368 -1.37185,-1.09455 -18.12478,-11.84619
-        -27.16372,-17.43304 -22.60802,-13.97371 -44.63503,-23.73679
-        -65.96961,-29.24008 -12.90334,-3.32844 -22.4552,-4.78346001
-        -36.33628,-5.53454005 -2.33131,-0.12614 -4.65619,-0.19431
-        -6.97477,-0.20464 z M 127.94976,28.393763 c -5.19571,-0.0494
-        -9.56197,1.7377 -13.21108,5.39192 -3.52948,3.53444 -5.00173,7.77495
-        -4.35116,12.53205 0.55648,4.06908 3.66581,8.35334 8.05998,11.10475
-        3.79694,2.37747 14.51349,9.64286 16.95245,11.49336 9.11917,6.91894
-        13.26285,15.82827 11.97394,25.7452 -1.27981,9.847087 -6.45133,17.788827
-        -16.40365,25.192257 -2.77985,2.06791 -3.33431,2.5827 -3.34501,3.10472
-        -0.013,0.63704 2.54798,0.14261 5.66735,-1.0945 23.03488,-9.13539
-        36.83118,-32.171837 33.66617,-56.213627 -1.33754,-10.1601
-        -5.17388,-18.05347 -12.14552,-24.98918 -6.25654,-6.22431
-        -13.70438,-10.16327 -22.30148,-11.79411 -1.58728,-0.3011
-        -3.10719,-0.45899 -4.56199,-0.47284 z m -23.03994,1.49087 c
-        -0.95766,-0.0611 -5.424339,1.55944 -9.382885,3.42976 -18.77441,8.87045
-        -30.353001,27.45844 -30.3475,48.71899 0.0019,7.26175 1.480661,13.5078
-        4.71548,19.915587 5.6558,11.2035 15.32926,18.98614 27.56265,22.17539
-        4.246365,1.10703 9.684845,1.17128 12.980085,0.15348 2.72046,-0.84026
-        6.0849,-2.99854 7.87135,-5.0493 1.79756,-2.06352 3.57168,-5.96293
-        4.04833,-8.89868 0.74175,-4.56849 -0.66729,-8.2212 -4.2695,-11.068587
-        -1.63441,-1.29192 -6.39614,-4.49545 -17.632,-11.86336 -6.004835,-3.93766
-        -10.521575,-8.90892 -13.069485,-14.38362 -3.95783,-8.50422
-        -3.05218,-18.26803 2.54197,-27.40556 2.31188,-3.77623 8.10937,-9.63481
-        12.379595,-12.50983 2.91319,-1.96137 3.54056,-2.6878 2.74557,-3.17913
-        -0.0315,-0.0195 -0.0798,-0.0311 -0.14366,-0.0351 z" />
-    </svg>
-    <span class="text-xl tracking-tight">{$appTitle}</span>
-  </div>
+  <a
+    href="."
+    class="flex items-center flex-shrink-0 text-green-600 p-2
+    hover:text-green-700">
+    <Logo class="fill-current h-8 w-10" />
+    <span class="text-xl tracking-tight ml-2">{$appTitle}</span>
+  </a>
 
   <!-- Menu button on desktop -->
   {#if $breakpoints.lg}
     <div class="flex flex-no-wrap" transition:fly={{ x: 200 }}>
       {#each $navbar.menuItems as item}
         <a
-          class="px-4 py-2 tracking-tight rounded text-green-600 hover:font-semibold"
+          class="p-2 tracking-tight text-green-600 uppercase px-2 mx-1
+          hover:text-green-700"
+          class:rounded={item.active}
+          class:bg-gray-100={item.active}
           href="#{item.name}"
           on:click|preventDefault={linkScrollTo}>
           {item.title}
@@ -76,38 +42,35 @@
 
   <!-- Menu button on mobile -->
   {#if !$breakpoints.lg}
-    <div class="relative">
+    <div class="relative rounded">
       <div class="block">
         <div
-          class="flex items-center rounded text-green-600 hover:text-green-700"
+          id="menu-mobile"
+          class="flex text-xl p-4 items-center text-green-600 hover:bg-gray-200
+          rounded-full"
           role="button"
           on:click={navbar.toggleMenuMobile}>
-          <svg
-            class="fill-current"
-            height="24"
-            width="24"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <title>Menu</title>
-            <path d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2
-              .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2
-              2-.9 2-2-.9-2-2-2z" />
-          </svg>
+          <i class="icon">more_vert</i>
         </div>
       </div>
       <!-- Menu items in mobile -->
       {#if $navbar.menuMobileShown}
         <div
           transition:fly={{ duration: 300, y: -5 }}
-          class="absolute w-48 right-0 bg-white max-w-md rounded shadow-xl
-          border border-gray-300 py-2 z-10">
-          <a class="block px-4 py-2 hover:bg-gray-200" href=".">Pelayanan</a>
-          <a class="block px-4 py-2 hover:bg-gray-200" href=".">Dokter</a>
-          <a class="block px-4 py-2 hover:bg-gray-200" href=".">Jadwal</a>
-          <a class="block px-4 py-2 hover:bg-gray-200" href=".">Kontak</a>
-          <a class="block px-4 py-2 hover:bg-gray-200" href=".">Tentang</a>
+          class="absolute -mt-3 mr-2 w-48 right-0 bg-white max-w-md rounded
+          shadow-xl border border-gray-300 py-2 z-10"
+          use:clickOutside={['menu-mobile']}
+          on:clickoutside={navbar.toggleMenuMobile}>
+          {#each $navbar.menuItems as item}
+            <a
+              class="block px-5 py-2 hover:text-green-700"
+              class:rounded={item.active}
+              class:bg-gray-200={item.active}
+              href="#{item.name}"
+              on:click|preventDefault={linkScrollTo}>
+              {item.title}
+            </a>
+          {/each}
         </div>
       {/if}
     </div>
