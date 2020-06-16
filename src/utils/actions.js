@@ -64,6 +64,7 @@ export function observeElement(element) {
         if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
           const visibleElement = entry.target.id
           navbar.setActiveMenu(visibleElement)
+          navbar.dismissMenuMobile()
           history.replaceState(null, null, `#${visibleElement}`)
         }
       })

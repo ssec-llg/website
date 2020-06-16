@@ -7,17 +7,29 @@
   export let fixed = false;
 </script>
 
+<style type="text/postcss">
+  .lift {
+    @apply fixed bg-white shadow;
+  }
+
+  .descend {
+    @apply h-20;
+  }
+
+  .item-active {
+    @apply rounded bg-gray-100;
+  }
+</style>
+
 <nav
-  class:fixed
-  class="flex flex-no-wrap items-center justify-between sm:px-12 w-full"
-  class:h-20={!fixed}
-  class:bg-white={fixed}
-  class:shadow={fixed}>
+  class:lift={fixed}
+  class:descend={!fixed}
+  class="flex flex-no-wrap items-center justify-between sm:px-12 w-full">
 
   <!-- Brand -->
   <a
     href="."
-    class="flex items-center flex-shrink-0 text-green-600 p-2
+    class="flex items-center flex-shrink-0 text-green-600 p-2 ml-2 sm:ml-0
     hover:text-green-700">
     <Logo class="fill-current h-8 w-10" />
     <span class="text-xl tracking-tight ml-2">{$appTitle}</span>
@@ -26,12 +38,11 @@
   <!-- Menu button on desktop -->
   {#if $breakpoints.lg}
     <div class="flex flex-no-wrap" transition:fly={{ x: 200 }}>
-      {#each $navbar.menuItems as item}
+      {#each $navbar.menuItems as item (item)}
         <a
           class="p-2 tracking-tight text-green-600 uppercase px-2 mx-1
           hover:text-green-700"
-          class:rounded={item.active}
-          class:bg-gray-100={item.active}
+          class:item-active={item.active}
           href="#{item.name}"
           on:click|preventDefault={linkScrollTo}>
           {item.title}
@@ -61,11 +72,10 @@
           shadow-xl border border-gray-300 py-2 z-10"
           use:clickOutside={['menu-mobile']}
           on:clickoutside={navbar.toggleMenuMobile}>
-          {#each $navbar.menuItems as item}
+          {#each $navbar.menuItems as item (item)}
             <a
               class="block px-5 py-2 hover:text-green-700"
-              class:rounded={item.active}
-              class:bg-gray-200={item.active}
+              class:item-active={item.active}
               href="#{item.name}"
               on:click|preventDefault={linkScrollTo}>
               {item.title}

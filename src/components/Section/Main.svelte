@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { scrollTo } from "../../utils/actions";
+  import { navLift } from "../../stores/app";
   import Nav from "../Navbar/Nav.svelte";
   import Typewriter from "../Text/Typewriter.svelte";
 
@@ -19,10 +20,12 @@
 </style>
 
 <section id="home" class="flex h-screen bg-gray-300">
-  <div class="absolute w-full">
-    <Nav />
-  </div>
-  <div class="my-auto mx-8 md:mx-16 text-gray-700">
+  {#if !$navLift}
+    <div class="absolute w-full">
+      <Nav />
+    </div>
+  {/if}
+  <div class="mt-24 md:my-auto mx-8 md:mx-16 text-gray-700">
     <Typewriter class="text-5xl" speed={50} visible={motoVisible}>
       Inovatif &bullet; Profesional &bullet; Bersahabat
     </Typewriter>

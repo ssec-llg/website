@@ -30,6 +30,10 @@ export const navbar = (function createNavStore() {
     store.update(p => ({ ...p, menuMobileShown: !p.menuMobileShown }))
   }
 
+  function dismissMenuMobile() {
+    store.update(p => ({ ...p, menuMobileShown: false }))
+  }
+
   function setActiveMenu(name) {
     store.update(p => ({
       ...p,
@@ -37,7 +41,7 @@ export const navbar = (function createNavStore() {
     }))
   }
   
-  return { ...store, toggleMenuMobile, setActiveMenu }
+  return { ...store, toggleMenuMobile, dismissMenuMobile, setActiveMenu }
 })()
 
 export const navLift = derived(navbar, $s => $s.menuItems.map(i => i.active).some(a => a))
