@@ -1,7 +1,12 @@
 <script>
+  import { onMount, createEventDispatcher } from "svelte";
+
+  const dispatch = createEventDispatcher();
+
   let visible = false;
   let classes = "";
   let speed = 80;
+  let auto = false;
 
   function typewriter(node) {
     const valid =
@@ -26,11 +31,21 @@
     };
   }
 
-  export { classes as class, speed, visible };
+  function onFinish() {
+    dispatch("finish");
+  }
+
+  if (auto) {
+    onMount(() => {
+      visible = true;
+    });
+  }
+
+  export { classes as class, speed, visible, auto };
 </script>
 
 {#if visible}
-  <span class={classes} in:typewriter>
+  <div class={classes} in:typewriter on:introend={onFinish}>
     <slot />
-  </span>
+  </div>
 {/if}

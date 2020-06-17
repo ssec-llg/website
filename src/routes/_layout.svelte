@@ -3,6 +3,7 @@
   import { fade } from "svelte/transition";
   import { windowWidth, navLift } from "../stores/app";
   import Nav from "../components/Navbar/Nav.svelte";
+  import Footer from "../components/Footer/Footer.svelte";
 
   export let segment;
   segment && console.log(segment);
@@ -19,3 +20,5 @@
 <main>
   <slot />
 </main>
+
+<Footer />
