@@ -17,6 +17,15 @@
     background-image: url("/images/bg-hero.svg");
     @apply bg-contain bg-no-repeat bg-right-bottom;
   }
+
+  .text-hero {
+    margin-top: 25%;
+    margin-bottom: auto;
+
+    @screen md {
+      @apply my-auto mx-16;
+    }
+  }
 </style>
 
 <section id="home" class="flex h-screen bg-gray-300">
@@ -26,9 +35,9 @@
     </div>
   {/if}
   {#if motoVisible}
-    <div transition:fade class="my-auto mx-8 md:mx-16 text-gray-700">
+    <div transition:fade class="text-hero mx-8 text-gray-700" >
       <h1 class="text-5xl">{@html $appMoto}</h1>
-      <p class="text-xl text-gray-600 max-w-xl">
+      <p class="text-lg md:text-xl text-gray-600 max-w-xl">
         Pusat pelayanan kesehatan spesialistik mata terpadu klinik utama mata
         Silampari Sriwijaya Eye Centre Lubuklinggau
       </p>
