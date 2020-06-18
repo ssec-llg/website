@@ -4,7 +4,13 @@
   import { breakpoints, navbar, appTitle } from "../../stores/app";
   import Logo from "../Site/Logo.svelte";
 
-  export let fixed = false;
+  let classes = "";
+  let noTransition = false;
+  let fixed = false;
+
+  const duration = noTransition ? 0 : 400;
+
+  export { classes as class, noTransition as notransition, fixed };
 </script>
 
 <style type="text/postcss">
@@ -24,7 +30,7 @@
 <nav
   class:lift={fixed}
   class:descend={!fixed}
-  class="flex flex-no-wrap items-center justify-between sm:px-12 w-full">
+  class="flex flex-no-wrap items-center justify-between sm:px-12 w-full {classes}">
 
   <!-- Brand -->
   <a
@@ -37,7 +43,7 @@
 
   <!-- Menu button on desktop -->
   {#if $breakpoints.lg}
-    <div class="flex flex-no-wrap" transition:fly={{ x: 200 }}>
+    <div class="flex flex-no-wrap" transition:fly={{ x: 200, duration }}>
       {#each $navbar.menuItems as item (item)}
         <a
           class="p-2 tracking-tight text-green-600 uppercase px-2 mx-1

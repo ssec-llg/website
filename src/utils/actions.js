@@ -71,7 +71,7 @@ export function observeElement(element) {
     }
 
     // init the observer
-    const options = { threshold: 0.55 }
+    const options = { threshold: 0.60 }
     const observer = new IntersectionObserver(changeElement, options)
 
     // target the elements (section) to be observed

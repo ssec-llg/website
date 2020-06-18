@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
   import { scrollTo } from "../../utils/actions";
-  import { navLift, appMoto } from "../../stores/app";
+  import { navLift } from "../../stores/app";
   import Nav from "../Navbar/Nav.svelte";
 
   let motoVisible = false;
@@ -14,44 +14,75 @@
 
 <style type="text/postcss">
   section {
-    background-image: url("/images/bg-hero.svg");
     @apply bg-contain bg-no-repeat bg-right-bottom;
-  }
-
-  .text-hero {
-    margin-top: 25%;
-    margin-bottom: auto;
+    background-image: url("/images/bg-hero.svg");
+    border-radius: 0 0 21%/4rem;
 
     @screen md {
-      @apply my-auto mx-16;
+      border-radius: 0 0 12rem;
+    }
+  }
+
+  .hero-button {
+    @apply inline-block px-6 py-3 uppercase rounded-full border border-green-400;
+
+    @screen md {
+      @apply px-6 py-4;
     }
   }
 </style>
 
-<section id="home" class="flex h-screen bg-gray-300">
+<section id="home" class="h-screen bg-gray-200">
   {#if !$navLift}
-    <div class="absolute w-full">
-      <Nav />
-    </div>
+    <Nav class="absolute w-full" notransition />
   {/if}
   {#if motoVisible}
-    <div transition:fade class="text-hero mx-8 text-gray-700" >
-      <h1 class="text-5xl">{@html $appMoto}</h1>
-      <p class="text-lg md:text-xl text-gray-600 max-w-xl">
-        Pusat pelayanan kesehatan spesialistik mata terpadu klinik utama mata
-        Silampari Sriwijaya Eye Centre Lubuklinggau
-      </p>
-      <div
-        class="inline-block px-4 py-3 mt-4 border border-green-500
-        text-green-500 rounded uppercase font-semibold"
-        href="#service"
-        role="button"
-        on:click|preventDefault={() => scrollTo('service')}>
-        <span class="flex items-center">
-          <i class="icon mr-2 text-lg">medical_services</i>
-          Pelayanan kami
-        </span>
+    <div transition:fade class="flex h-full">
+
+      <!-- ads and brand words -->
+      <div class="my-auto mx-8 md:ml-16">
+        <h1
+          class="text-4xl sm:text-5xl mb-4 md:mb-1 font-semibold text-gray-700">
+          Inovatif. Profesional. Bersahabat.
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 md:max-w-2xl">
+          Silampari Sriwijaya Eye Centre atau biasa disebut SSEC adalah Pusat
+          Pelayanan Kesehatan Spesialistik Mata Terpadu (Klinik Utama Mata) yang
+          berada di Kota
+          <a
+            class="underline"
+            href="http://g.page/lubuklinggau"
+            target="_blank"
+            rel="noopener noreferrer">
+            Lubuklinggau,
+          </a>
+          Sumatera Selatan.
+        </p>
+        <div
+          class="hero-button mt-4 text-white bg-green-400 shadow-lg
+          hover:bg-green-500"
+          role="button"
+          on:click|preventDefault={() => scrollTo('service')}>
+          <span class="flex items-center">
+            <i class="icon mr-2 text-lg">medical_services</i>
+            Pelayanan kami
+          </span>
+        </div>
+        <div
+          class="hero-button md:ml-2 mt-2 md:mt-0 text-green-500 bg-gray-200
+          bg-opacity-50 shadow hover:bg-gray-300"
+          role="button"
+          on:click|preventDefault={() => scrollTo('contact')}>
+          <span class="flex items-center">
+            <i class="icon mr-2 text-lg">near_me</i>
+            Berkunjung
+          </span>
+        </div>
       </div>
+
+      <!-- <div class="flex w-1/3 items-end bg-green-200"> -->
+      <!-- TODO -->
+      <!-- </div> -->
     </div>
   {/if}
 </section>

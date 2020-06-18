@@ -12,10 +12,6 @@ export const breakpoints = derived(windowWidth, $w => ({
 }))
 
 export const appTitle = derived(breakpoints, $bp => $bp.xs ? "Silampari Sriwijaya Eye Centre" : "SSEC")
-export const appMoto = derived(breakpoints, $bp => {
-  const moto = "Inovatif &bullet; Profesional &bullet; Bersahabat"
-  return $bp.sm ? moto : moto.split(" &bullet; ").join("<br />")
-})
 
 export const navbar = (function createNavStore() {
   const init = {
