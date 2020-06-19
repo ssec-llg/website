@@ -1,7 +1,7 @@
 <script>
   import { observeElement } from "../utils/actions";
-  import Main from "../components/Section/Main.svelte";
-  import Service from "../components/Section/Service.svelte";
+  import Main from "../components/Section/Main/Main.svelte";
+  import Service from "../components/Section/Service/Service.svelte";
 
   observeElement("section");
 </script>

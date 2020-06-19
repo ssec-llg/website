@@ -1,9 +1,9 @@
 <script>
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import { scrollTo } from "../../utils/actions";
-  import { navLift } from "../../stores/app";
-  import Nav from "../Navbar/Nav.svelte";
+  import { scrollTo } from "../../../utils/actions";
+  import { navLift } from "../../../stores/app";
+  import Nav from "../../Navbar/Nav.svelte";
 
   let motoVisible = false;
 
