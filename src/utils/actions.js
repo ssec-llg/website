@@ -61,7 +61,7 @@ export function observeElement(element) {
     const changeElement = (entries /* observer */) => {
       entries.forEach((entry) => {
         // verify the element is intersecting
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
           const visibleElement = entry.target.id
           navbar.setActiveMenu(visibleElement)
           navbar.dismissMenuMobile()
@@ -71,7 +71,7 @@ export function observeElement(element) {
     }
 
     // init the observer
-    const options = { threshold: 0.60 }
+    const options = { threshold: 0.5 }
     const observer = new IntersectionObserver(changeElement, options)
 
     // target the elements (section) to be observed
