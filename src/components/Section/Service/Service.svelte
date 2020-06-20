@@ -29,6 +29,26 @@
       border-radius: 21%/6rem 0 0;
     }
   }
+
+  .grid-services {
+    @apply grid grid-cols-1 gap-4 mx-4;
+
+    @screen sm {
+      @apply mx-8;
+    }
+
+    @screen md {
+      @apply grid-cols-2 max-w-3xl;
+    }
+
+    @screen lg {
+      @apply grid-cols-3 max-w-4xl;
+    }
+
+    @screen xl {
+      @apply grid-cols-4 max-w-6xl;
+    }
+  }
 </style>
 
 <section id="service" class="bg-gray-200 antialiased">
@@ -39,7 +59,7 @@
         <h2 class="hero-title">Pelayanan kami</h2>
       </header>
 
-      <div class="grid grid-cols-3 gap-4 md:max-w-3xl lg:max-w-4xl">
+      <div class="grid-services">
         {#each services as { icon, title, desc } (title)}
           <ServiceItem {icon} {title} />
         {/each}
