@@ -1,9 +1,9 @@
 {
-	"background_color": "#ffffff",
-	"theme_color": "#333333",
+	"background_color": "#F7FCFA",
+	"theme_color": "#F7FCFA",
 	"name": "Silampari Sriwijaya Eye Centre Lubuklinggau",
 	"short_name": "SSEC",
-	"display": "minimal-ui",
+	"display": "standalone",
 	"start_url": "/",
 	"icons": [
 		{
