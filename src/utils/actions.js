@@ -55,14 +55,15 @@ export function clickOutside(node, excludes) {
   }
 }
 
-export function observeElement(element) {
+export function observeElement(element, threshold = .3) {
   onMount(() => {
     // simple function to use for callback in the intersection observer
     const changeElement = (entries /* observer */) => {
       entries.forEach((entry) => {
         // verify the element is intersecting
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-          const visibleElement = entry.target.id
+        const { isIntersecting, intersectionRatio, target } = entry
+        if (isIntersecting && intersectionRatio >= (threshold - .22)) {
+          const visibleElement = target.id
           navbar.setActiveMenu(visibleElement)
           navbar.dismissMenuMobile()
           history.replaceState(null, null, `#${visibleElement}`)
@@ -71,7 +72,7 @@ export function observeElement(element) {
     }
 
     // init the observer
-    const options = { threshold: 0.5 }
+    const options = { threshold }
     const observer = new IntersectionObserver(changeElement, options)
 
     // target the elements (section) to be observed
