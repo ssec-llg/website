@@ -15,7 +15,7 @@
 
 <style type="text/postcss">
   .lift {
-    @apply fixed bg-white shadow;
+    @apply fixed bg-white shadow z-10;
   }
 
   .descend {
