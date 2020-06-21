@@ -4,7 +4,7 @@
 
 <style type="text/postcss">
   .grid-doctors {
-    @apply grid grid-cols-1 gap-2 mx-12;
+    @apply grid grid-cols-1 gap-2 mx-16;
 
     @screen sm {
       @apply grid-cols-3 gap-4 max-w-3xl mx-0;
@@ -16,7 +16,7 @@
   }
 
   .image-title {
-    @apply font-semibold leading-tight text-sm;
+    @apply font-semibold mt-1;
 
     @screen md {
       @apply mt-2;
