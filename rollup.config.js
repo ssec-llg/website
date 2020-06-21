@@ -19,8 +19,12 @@ const preprocess = [
 		postcss: true
 	}),
 	svelteImage({
-		placeholder: "blur",
-		outputDir: "min/"
+		outputDir: "min/",
+		trace: {
+			background: "#F7FCFA",
+			color: "#9ae6b4",
+			threshold: 120
+		}
 	}),
 ]
 
