@@ -32,7 +32,7 @@
   }
 </style>
 
-<section id="home" class="h-screen bg-gray-200">
+<section id="home" class="h-screen bg-gray-200 select-none">
   {#if !$navLift}
     <Nav class="absolute w-full" notransition />
   {/if}

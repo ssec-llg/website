@@ -30,7 +30,7 @@
 <nav
   class:lift={fixed}
   class:descend={!fixed}
-  class="flex flex-no-wrap items-center justify-between sm:px-12 w-full {classes}">
+  class="flex flex-no-wrap items-center justify-between sm:px-12 w-full select-none {classes}">
 
   <!-- Brand -->
   <a
