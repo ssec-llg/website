@@ -9,7 +9,10 @@
   export { classes as class, icon, title, desc };
 </script>
 
-<div class="px-6 py-5 bg-white rounded-lg shadow-md text-center {classes}">
+<div
+  class="{classes} px-6 py-5 bg-white rounded-lg shadow-md text-center
+  transition duration-300 ease-in-out transform hover:-translate-y-1
+  hover:shadow-lg">
   <header class="mb-2">
     <i class="icon text-3xl">{icon}</i>
     <h3 class="font-semibold">{title}</h3>
