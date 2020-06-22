@@ -24,7 +24,7 @@
   }
 </style>
 
-<section id="doctor" class="bg-gray-200 py-12">
+<section id="doctor" class="bg-gray-200 py-12 select-none">
 
   <header class="flex justify-center my-8 w-full">
     <h2 class="hero-title">Dokter spesialis</h2>

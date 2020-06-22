@@ -51,7 +51,7 @@
   }
 </style>
 
-<section id="service" class="bg-gray-200 antialiased">
+<section id="service" class="bg-gray-200 antialiased select-none">
   <div class="flex rounded-lt-container">
 
     <div class="mx-auto my-12">
