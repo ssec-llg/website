@@ -4,15 +4,11 @@
 
 <style type="text/postcss">
   .grid-doctors {
-    @apply grid grid-cols-1 gap-2 mx-16;
+    @apply grid grid-cols-1 gap-2 mx-8;
 
     @screen sm {
-      @apply grid-cols-3 gap-4 max-w-3xl mx-0;
+      @apply grid-cols-3 gap-4 max-w-3xl;
     }
-  }
-
-  .image-container {
-    @apply p-6 text-center;
   }
 
   .image-title {
@@ -30,58 +26,76 @@
     <h2 class="hero-title">Dokter spesialis</h2>
   </header>
 
-  <div class="flex justify-center">
+  <div class="flex justify-center mb-12">
 
     <div class="grid-doctors">
 
-      <div class="image-container">
-        <Image
-          class="object-cover rounded-full bg-gray-100 shadow border-4
-          border-white"
-          src="images/dr-fidalia.png" />
-        <h3 class="image-title">DR. dr. Hj. Fidalia, Sp.M(K)</h3>
+      <div class="text-center">
+        <div class="mx-16 sm:mx-8 sm:pt-8">
+          <Image
+            class="object-cover rounded-full bg-gray-100 hover:bg-yellow-200
+            shadow border-4 border-white"
+            src="images/dr-fidalia.png" />
+        </div>
+        <h3 class="image-title underline">DR. dr. Hj. Fidalia, Sp.M(K)</h3>
+        <p class="text-gray-600">Spesialis Mata Konsultan Glaukoma</p>
       </div>
 
-      <div class="image-container">
-        <Image
-          class="object-cover rounded-full bg-gray-100 shadow border-4
-          border-white"
-          src="images/dr-ansyori.png" />
-        <h3 class="image-title">
+      <div class="text-center">
+        <div class="mx-16 sm:mx-8 pt-8">
+          <Image
+            class="object-cover rounded-full bg-gray-100 hover:bg-orange-200
+            shadow border-4 border-white"
+            src="images/dr-ansyori.png" />
+        </div>
+        <h3 class="image-title underline">
           dr. H. AK. Ansyori, Sp.M(K)., M.Kes., MARS., PhD
         </h3>
+        <p class="text-gray-600">Spesialis Mata Konsultan Vitreoretina</p>
       </div>
 
-      <div class="image-container">
-        <Image
-          class="object-cover rounded-full bg-gray-100 shadow border-4
-          border-white"
-          src="images/dr-riani.png" />
-        <h3 class="image-title">dr. Riani Erna, Sp.M(K)</h3>
+      <div class="text-center">
+        <div class="mx-16 sm:mx-8 pt-8">
+          <Image
+            class="object-cover rounded-full bg-gray-100 hover:bg-green-300
+            shadow border-4 border-white"
+            src="images/dr-riani.png" />
+        </div>
+        <h3 class="image-title underline">dr. Riani Erna, Sp.M(K)</h3>
+        <p class="text-gray-600">Spesialis Mata Konsultan Tumor dan Rekonstruksi</p>
       </div>
 
-      <div class="image-container">
-        <Image
-          class="object-cover rounded-full bg-gray-100 shadow border-4
-          border-white"
-          src="images/dr-wini.png" />
-        <h3 class="image-title">dr. Wini Putria Marindah, Sp.M</h3>
+      <div class="text-center">
+        <div class="mx-16 sm:mx-8 pt-8">
+          <Image
+            class="object-cover rounded-full bg-gray-100 hover:bg-blue-200
+            shadow border-4 border-white"
+            src="images/dr-wini.png" />
+        </div>
+        <h3 class="image-title underline">dr. Wini Putria Marindah, Sp.M</h3>
+        <p class="text-gray-600">Spesialis Mata</p>
       </div>
 
-      <div class="image-container">
-        <Image
-          class="object-cover rounded-full bg-gray-100 shadow border-4
-          border-white"
-          src="images/dr-hardianto.png" />
-        <h3 class="image-title">dr. Hardianto, Sp.M</h3>
+      <div class="text-center">
+        <div class="mx-16 sm:mx-8 pt-8">
+          <Image
+            class="object-cover rounded-full bg-gray-100 hover:bg-yellow-300
+            shadow border-4 border-white"
+            src="images/dr-hardianto.png" />
+        </div>
+        <h3 class="image-title underline">dr. Hardianto, Sp.M</h3>
+        <p class="text-gray-600">Spesialis Mata</p>
       </div>
 
-      <div class="image-container">
-        <Image
-          class="object-cover rounded-full bg-gray-100 shadow border-4
-          border-white"
-          src="images/dr-tesha.png" />
-        <h3 class="image-title">dr. Tesha Ratnafury, Sp.M</h3>
+      <div class="text-center">
+        <div class="mx-16 sm:mx-8 pt-8">
+          <Image
+            class="object-cover rounded-full bg-gray-100 hover:bg-green-200
+            shadow border-4 border-white"
+            src="images/dr-tesha.png" />
+        </div>
+        <h3 class="image-title underline">dr. Tesha Ratnafury, Sp.M</h3>
+        <p class="text-gray-600">Spesialis Mata</p>
       </div>
 
     </div>
