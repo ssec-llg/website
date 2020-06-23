@@ -5,17 +5,24 @@
   import Logo from "../Site/Logo.svelte";
 
   let classes = "";
-  let noTransition = false;
-  let fixed = false;
+  let lift = false;
 
-  const duration = noTransition ? 0 : 400;
-
-  export { classes as class, noTransition as notransition, fixed };
+  export { classes as class, lift };
 </script>
 
 <style type="text/postcss">
+  nav {
+    @apply fixed flex flex-no-wrap items-center justify-between w-full select-none;
+
+    transition: all 0.3s linear;
+
+    @screen sm {
+      @apply px-12;
+    }
+  }
+
   .lift {
-    @apply fixed bg-white shadow z-10;
+    @apply bg-white shadow z-10;
   }
 
   .descend {
@@ -27,10 +34,7 @@
   }
 </style>
 
-<nav
-  class:lift={fixed}
-  class:descend={!fixed}
-  class="flex flex-no-wrap items-center justify-between sm:px-12 w-full select-none {classes}">
+<nav class:lift class:descend={!lift} class={classes}>
 
   <!-- Brand -->
   <a
@@ -43,7 +47,7 @@
 
   <!-- Menu button on desktop -->
   {#if $breakpoints.lg}
-    <div class="flex flex-no-wrap" transition:fly={{ x: 200, duration }}>
+    <div class="flex flex-no-wrap" transition:fly={{ x: 200, duration: 400 }}>
       {#each $navbar.menuItems as item (item)}
         <a
           class="p-2 tracking-tight text-green-600 uppercase px-2 mx-1

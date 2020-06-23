@@ -2,14 +2,10 @@
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
   import { scrollTo } from "../../../utils/actions";
-  import { navLift } from "../../../stores/app";
-  import Nav from "../../Navbar/Nav.svelte";
 
   let motoVisible = false;
 
-  onMount(() => {
-    motoVisible = true;
-  });
+  onMount(() => (motoVisible = true));
 </script>
 
 <style type="text/postcss">
@@ -33,9 +29,6 @@
 </style>
 
 <section id="home" class="h-screen bg-gray-200 select-none">
-  {#if !$navLift}
-    <Nav class="absolute w-full" notransition />
-  {/if}
   {#if motoVisible}
     <div transition:fade class="flex h-full">
 
@@ -79,10 +72,6 @@
           </span>
         </div>
       </div>
-
-      <!-- <div class="flex w-1/3 items-end bg-green-200"> -->
-      <!-- TODO -->
-      <!-- </div> -->
     </div>
   {/if}
 </section>

@@ -40,8 +40,6 @@ export const navbar = (function createNavStore() {
       menuItems: p.menuItems.map(m => ({ ...m, active: m.name === name }))
     }))
   }
-  
+
   return { ...store, toggleMenuMobile, dismissMenuMobile, setActiveMenu }
 })()
-
-export const navLift = derived(navbar, $s => $s.menuItems.map(i => i.active).some(a => a))
