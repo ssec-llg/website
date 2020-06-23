@@ -23,7 +23,7 @@
 <svelte:window bind:innerWidth={$windowWidth} on:scroll={setNavLift} />
 
 <header>
-  <Nav {lift} />
+  <Nav {segment} {lift} />
 </header>
 
 <main>

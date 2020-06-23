@@ -17,10 +17,10 @@ export const navbar = (function createNavStore() {
   const init = {
     menuMobileShown: false,
     menuItems: [
-      { name: "service", title: "Pelayanan", active: false },
-      { name: "doctor", title: "Dokter", active: false },
-      { name: "schedule", title: "Jadwal", active: false },
-      { name: "contact", title: "Kontak", active: false },
+      { name: "#service", title: "Pelayanan", active: false },
+      { name: "#doctor", title: "Dokter", active: false },
+      { name: "#schedule", title: "Jadwal", active: false },
+      { name: "#contact", title: "Kontak", active: false },
       { name: "about", title: "Tentang", active: false },
     ]
   }

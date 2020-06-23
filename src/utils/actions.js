@@ -20,14 +20,8 @@ export function scrollTo(elementId) {
   const targetEl = document.getElementById(elementId)
   if (targetEl) {
     targetEl.scrollIntoView({ behavior: "smooth", block: "start" })
-    history.pushState(null, null, `#${elementId}`)
+    history.replaceState(null, null, `#${elementId}`)
   }
-}
-
-export function linkScrollTo(event) {
-  const hash = event.target.hash
-  const id = hash && hash.replace("#", '')
-  id && scrollTo(id)
 }
 
 /**
@@ -69,9 +63,9 @@ export function observeElement(element, threshold = .3) {
         const { isIntersecting, intersectionRatio, target } = entry
         if (isIntersecting && intersectionRatio >= (threshold - .22)) {
           const visibleElement = target.id
-          navbar.setActiveMenu(visibleElement)
+          navbar.setActiveMenu(`#${visibleElement}`)
           navbar.dismissMenuMobile()
-          history.replaceState(null, null, `#${visibleElement}`)
+          // history.replaceState(null, null, `#${visibleElement}`)
         }
       })
     }

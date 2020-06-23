@@ -1,13 +1,24 @@
 <script>
   import { fly } from "svelte/transition";
-  import { linkScrollTo, clickOutside } from "../../utils/actions";
+  import { clickOutside, scrollTo } from "../../utils/actions";
   import { breakpoints, navbar, appTitle } from "../../stores/app";
   import Logo from "../Site/Logo.svelte";
 
+  let segment;
   let classes = "";
   let lift = false;
 
-  export { classes as class, lift };
+  function linkScrollTo(event) {
+    const hash = event.target.hash;
+    if (hash && !segment) {
+      event.preventDefault();
+    }
+
+    const id = hash && hash.replace("#", "");
+    id && scrollTo(id);
+  }
+
+  export { classes as class, lift, segment };
 </script>
 
 <style type="text/postcss">
@@ -53,8 +64,8 @@
           class="p-2 tracking-tight text-green-600 uppercase px-2 mx-1
           hover:text-green-700"
           class:item-active={item.active}
-          href="#{item.name}"
-          on:click|preventDefault={linkScrollTo}>
+          href={item.name}
+          on:click={linkScrollTo}>
           {item.title}
         </a>
       {/each}
@@ -86,8 +97,8 @@
             <a
               class="block px-5 py-2 hover:text-green-700"
               class:item-active={item.active}
-              href="#{item.name}"
-              on:click|preventDefault={linkScrollTo}>
+              href={item.name}
+              on:click={linkScrollTo}>
               {item.title}
             </a>
           {/each}
