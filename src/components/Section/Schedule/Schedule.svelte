@@ -1,6 +1,4 @@
 <script>
-  import Image from "svelte-image";
-
   const schedules = [
     {
       day: "Senin",
@@ -9,6 +7,7 @@
 
     {
       day: "Selasa",
+      time: "08.00 - 13.00 WIB",
     },
 
     {
@@ -18,6 +17,7 @@
 
     {
       day: "Kamis",
+      time: "08.00 - 13.00 WIB",
     },
 
     {
@@ -76,13 +76,15 @@
 
   <div class="flex justify-center mb-6">
     <div class="shadow bg-yellow-200 rounded m-4 p-4 md:max-w-xl">
-      <h2 class="font-semibold">COVID-19 Alert!</h2>
+      <h2 class="font-semibold">New Normal &bullet; COVID-19</h2>
       <hr class="my-2" />
       <p class="text-gray-600">
-        Sebagai bentuk komitmen kami melindungi pasien dan keryawan dari wabah
-        COVID-19 kami melakukan perubahan jadwal praktek mulai tanggal 20 April
-        2020. Kami buka praktik hanya pada hari Senin, Rabu, dan Jum'at dari jam
-        08.00 hingga 14.00 WIB.
+        Sebagai bentuk komitmen kami untuk patuh terhadap protokol kesehatan
+        <em>New Normal,</em>
+        kami melakukan perubahan jadwal praktek mulai tanggal 29 Juni 2020. Kami
+        buka praktik dari hari Senin hingga Jum'at dari pukul 08.00 hingga 13.00
+        WIB dan hari Sabtu jadwal khusus konsultan dari pukul 08.00 hingga
+        selesai.
       </p>
     </div>
   </div>
