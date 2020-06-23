@@ -19,6 +19,17 @@
       desc: "",
     },
   ];
+
+  const colors = [
+    "text-green-600",
+    "text-blue-600",
+    "text-red-600",
+    "text-yellow-600",
+    "text-teal-600",
+    "text-indigo-600",
+    "text-purple-600",
+    "text-pink-600",
+  ];
 </script>
 
 <style type="text/postcss">
@@ -60,8 +71,8 @@
       </header>
 
       <div class="grid-services">
-        {#each services as { icon, title, desc } (title)}
-          <ServiceItem {icon} {title} />
+        {#each services as { icon, title, desc }, i (title)}
+          <ServiceItem color={colors[i]} {icon} {title} />
         {/each}
       </div>
     </div>
