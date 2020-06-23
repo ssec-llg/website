@@ -5,6 +5,7 @@
   import Service from "../components/Section/Service/Service.svelte";
   import Doctor from "../components/Section/Doctor/Doctor.svelte";
   import Schedule from "../components/Section/Schedule/Schedule.svelte";
+  import Contact from "../components/Section/Contact/Contact.svelte";
 
   const threshold = $breakpoints.md ? 0.5 : 0.3;
   observeElement("section", threshold);
@@ -21,3 +22,5 @@
 <Doctor />
 
 <Schedule />
+
+<Contact />
