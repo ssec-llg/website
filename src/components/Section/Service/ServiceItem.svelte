@@ -11,8 +11,8 @@
 </script>
 
 <div
-  class="{classes} px-6 py-5 bg-white rounded-lg shadow-md text-center
-  transition duration-300 ease-linear hover:shadow-xl">
+  class="{classes} px-6 py-5 bg-white rounded-lg shadow text-center
+  transition duration-300 ease-linear hover:shadow-lg">
   <header class="mb-2">
     <i class="icon text-3xl {color}">{icon}</i>
     <h3 class="font-semibold">{title}</h3>
