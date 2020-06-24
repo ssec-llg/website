@@ -51,8 +51,8 @@
             href="tel:07333286255"
             target="_blank"
             rel="noopener noreferrer">
-            <i class="icon mx-1">local_phone</i>
-            <span>3286 255</span>
+            <i class="icon mr-1">local_phone</i>
+            <span>Telphone</span>
           </a>
 
           <a
@@ -68,7 +68,7 @@
                 d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0
                 011-1h3z" />
             </svg>
-            <span>@ssec.llg</span>
+            <span>Facebook</span>
           </a>
 
           <a
@@ -89,7 +89,7 @@
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
             </svg>
-            <span>@ssec.llg</span>
+            <span>Instagram</span>
           </a>
 
           <a
@@ -97,7 +97,7 @@
             href="tel:07333286255"
             target="_blank"
             rel="noopener noreferrer">
-            <i class="icon mx-1">place</i>
+            <i class="icon mr-1">place</i>
             <span>Maps</span>
           </a>
 
