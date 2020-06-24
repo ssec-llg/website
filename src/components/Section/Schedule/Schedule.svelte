@@ -93,8 +93,8 @@
     <div class="schedule-container">
       {#each schedules as sch}
         <div
-          class="relative schedule-item {sch.time ? 'border-green-300' : 'border-red-300'}"
-          class:bg-green-100={sch.info}>
+          class="relative schedule-item {sch.time ? 'border-green-300' : 'border-red-300'}
+          {sch.info ? 'bg-green-100' : ''}">
           <p class="font-semibold underline">{sch.day}</p>
           <p class="text-gray-700 uppercase text-xs md:text-base">
             {sch.time ? sch.time : 'tutup'}
