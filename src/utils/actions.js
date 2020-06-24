@@ -61,7 +61,7 @@ export function observeElement(element, threshold = .3) {
       entries.forEach((entry) => {
         // verify the element is intersecting
         const { isIntersecting, intersectionRatio, target } = entry
-        if (isIntersecting && intersectionRatio >= (threshold - .22)) {
+        if (isIntersecting && intersectionRatio >= (threshold - .18)) {
           const visibleElement = target.id
           navbar.setActiveMenu(`#${visibleElement}`)
           navbar.dismissMenuMobile()

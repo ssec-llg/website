@@ -7,7 +7,7 @@
   import Schedule from "../components/Section/Schedule/Schedule.svelte";
   import Contact from "../components/Section/Contact/Contact.svelte";
 
-  const threshold = $breakpoints.md ? 0.5 : 0.3;
+  const threshold = $breakpoints.md ? 0.52 : 0.38;
   observeElement("section", threshold);
 </script>
 
