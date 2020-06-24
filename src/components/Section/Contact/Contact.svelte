@@ -94,7 +94,7 @@
 
           <a
             class="button bg-orange-200"
-            href="tel:07333286255"
+            href={mapUrl}
             target="_blank"
             rel="noopener noreferrer">
             <i class="icon mr-1">place</i>
