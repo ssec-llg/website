@@ -1,5 +1,14 @@
 <script>
+  import { fly } from "svelte/transition";
+  import { clickOutside } from "../../utils/actions";
   import { appTitle } from "../../stores/app";
+  import Tech from "../Site/Tech.svelte";
+
+  let techShown = false;
+
+  function toggleTech() {
+    techShown = !techShown;
+  }
 </script>
 
 <style>
@@ -22,9 +31,24 @@
       &NonBreakingSpace;by&NonBreakingSpace;
       <a href=".">{$appTitle} Lubuklinggau</a>
     </p>
-    <p>
-      Built using awesome open source
-      <a href="/technology">technologies</a>
+    <p class="inline-block relative">
+      Built using super awesome open source
+      <span
+        id="things-button"
+        class="text-green-600 underline"
+        role="button"
+        on:click={toggleTech}>
+        things
+      </span>
+      {#if techShown}
+        <div
+          transition:fly={{ duration: 300, y: 5 }}
+          class="absolute right-0 bottom-0 mb-5"
+          use:clickOutside={['things-button']}
+          on:clickoutside={toggleTech}>
+          <Tech />
+        </div>
+      {/if}
     </p>
     <p>&copy;2020 All Rights Reserved</p>
   </div>
