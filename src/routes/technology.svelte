@@ -1,9 +1,9 @@
 <svelte:head>
-	<title>Tentang kami</title>
+	<title>Teknologi</title>
 </svelte:head>
 
 <section class="flex h-screen">
   <div class="m-auto">
-    <h1>Tentang kami</h1>
+    <h1>Technologies</h1>
   </div>
 </section>

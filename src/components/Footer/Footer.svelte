@@ -22,26 +22,10 @@
       &NonBreakingSpace;by&NonBreakingSpace;
       <a href=".">{$appTitle} Lubuklinggau</a>
     </p>
-    <!-- <p>
-      Built using
-      <a
-        href="https://sapper.svelte.dev/"
-        target="_blank"
-        rel="noopener noreferrer">
-        Sapper
-      </a>
-      &
-      <a
-        href="https://tailwindcss.com/"
-        target="_blank"
-        rel="noopener noreferrer">
-        Tailwind
-      </a>
-      hosted by
-      <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">
-        Vercel
-      </a>
-    </p> -->
+    <p>
+      Built using awesome open source
+      <a href="/technology">technologies</a>
+    </p>
     <p>&copy;2020 All Rights Reserved</p>
   </div>
 </footer>
