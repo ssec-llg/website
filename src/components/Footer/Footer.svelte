@@ -35,7 +35,7 @@
       Built using super awesome open source
       <span
         id="things-button"
-        class="text-green-600 underline"
+        class="text-green-600 hover:underline"
         role="button"
         on:click={toggleTech}>
         things

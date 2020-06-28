@@ -11,6 +11,10 @@
     background-image: url("/images/ic-vscode.svg");
   }
 
+  .inkscape {
+    background-image: url("/images/ic-inkscape.svg");
+  }
+
   .sapper {
     background-image: url("/images/ic-sapper.svg");
   }
@@ -64,6 +68,14 @@
     rel="noopener noreferrer"
     class="brand-logo vscode">
     <p class="pl-8 ml-1">Visual Studio Code</p>
+  </a>
+
+  <a
+    href="https://inkscape.org/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="brand-logo inkscape">
+    <p class="pl-8 ml-1">Inkscape</p>
   </a>
 
 </div>
