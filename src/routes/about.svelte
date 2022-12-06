@@ -1,9 +1,0 @@
-<svelte:head>
-	<title>Tentang kami</title>
-</svelte:head>
-
-<section class="flex h-screen">
-  <div class="m-auto">
-    <h1>Tentang kami</h1>
-  </div>
-</section>

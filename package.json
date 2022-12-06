@@ -1,48 +1,32 @@
 {
-  "name": "ssec-web",
-  "description": "Website for Silampari Sriwijaya Eye Centre Lubuklinggau",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "build": "env NODE_ENV=production sapper build --legacy",
-    "dev": "sapper dev",
-    "export": "sapper export --legacy",
-    "start": "node __sapper__/build",
-    "cy:run": "cypress run",
-    "cy:open": "cypress open",
-    "test": "concurrently \"npm:dev\" \"cy:run\""
-  },
-  "dependencies": {
-    "compression": "^1.7.1",
-    "polka": "next",
-    "sirv": "^0.4.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/runtime": "^7.0.0",
-    "@fullhuman/postcss-purgecss": "^2.2.0",
-    "@rollup/plugin-babel": "^5.0.0",
-    "@rollup/plugin-commonjs": "^12.0.0",
-    "@rollup/plugin-node-resolve": "^8.0.0",
-    "@rollup/plugin-replace": "^2.2.0",
-    "concurrently": "^5.2.0",
-    "cssnano": "^4.1.10",
-    "postcss": "^7.0.32",
-    "postcss-load-config": "^2.1.0",
-    "postcss-nested": "^4.2.1",
-    "rollup": "^2.3.4",
-    "rollup-plugin-svelte": "^5.0.1",
-    "rollup-plugin-terser": "^5.3.0",
-    "sapper": "^0.27.0",
-    "svelte": "^3.0.0",
-    "svelte-image": "^0.2.3",
-    "svelte-preprocess": "^3.9.7",
-    "tailwindcss": "^1.4.6"
-  },
-  "engines": {
-    "node": "12.x"
-  }
+	"name": "ssec-website-kit",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+		"test": "playwright test",
+		"test:unit": "vitest",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.28.1",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"svelte": "^3.53.1",
+		"svelte-check": "^2.9.2",
+		"typescript": "^4.9.3",
+		"vite": "^3.2.4",
+		"vitest": "^0.25.3"
+	},
+	"type": "module"
 }
