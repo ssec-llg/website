@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { PUBLIC_APP_NAME } from '$env/static/public';
+	import NavIndicator from '$src/lib/component/nav-indicator.svelte';
 	// fonts
 	import '@fontsource/chivo-mono';
 	import '@fontsource/figtree';
@@ -22,5 +23,7 @@
 		/>
 	{/if}
 </svelte:head>
+
+<NavIndicator />
 
 <slot />
