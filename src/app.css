@@ -1,0 +1,12 @@
+:root {
+	--at-apply: 'accent-emerald-600';
+}
+
+:root.dark {
+	color-scheme: dark;
+}
+
+body {
+	--at-apply: 'font-sans bg-default overflow-y-scroll';
+	--at-apply: 'text-default leading-tight antialiased';
+}
