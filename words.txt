@@ -2,5 +2,6 @@ Chivo
 figtree
 fontsource
 iconify
+Lubuklinggau
 Silampari
 Sriwijaya
