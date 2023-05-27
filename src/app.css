@@ -1,5 +1,5 @@
 :root {
-	--at-apply: 'accent-emerald-600';
+	--at-apply: 'accent-emerald-600 scroll-smooth';
 }
 
 :root.dark {
