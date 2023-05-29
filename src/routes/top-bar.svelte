@@ -27,11 +27,12 @@
 					}
 				}
 			},
-			{ root: null, rootMargin: '0px', threshold: 0.5 }
+			{ root: null, rootMargin: '0px', threshold: 0.2 }
 		);
 		for (const section of menu_sections) {
 			menu_observer.observe(section);
 		}
+		return () => menu_observer.disconnect();
 	}
 
 	function set_lift_state() {
@@ -43,8 +44,11 @@
 	}
 
 	onMount(() => {
-		setup_menu_states();
+		const set_down = setup_menu_states();
 		set_lift_state();
+		return () => {
+			set_down?.();
+		};
 	});
 </script>
 

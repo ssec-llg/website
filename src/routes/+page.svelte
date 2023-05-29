@@ -1,6 +1,5 @@
 <script>
 	import { PUBLIC_APP_NAME } from '$env/static/public';
-	import { fade } from 'svelte/transition';
 	import SectionContact from './section-contact.svelte';
 	import SectionPhysician from './section-physician.svelte';
 	import SectionService from './section-service.svelte';
@@ -9,10 +8,7 @@
 
 <TopBar />
 
-<article
-	transition:fade
-	class="h-screen bg-contain bg-no-repeat bg-right-bottom bg-[url(/bg-main-hero.svg)]"
->
+<article class="h-screen bg-contain bg-no-repeat bg-right-bottom bg-[url(/bg-main-hero.svg)]">
 	<section class="flex h-full">
 		<div class="my-auto mx-8 md:ml-16">
 			<p class="text-5xl mb-4 md:mb-1 font-semibold text-gray-700">
