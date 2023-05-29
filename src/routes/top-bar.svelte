@@ -54,7 +54,7 @@
 	class="{lift
 		? 'fixed md:px-4 border-b shadow bg-default'
 		: 'absolute p-4 md:p-8'} transition-all duration-300
-		top-0 left-0 w-full flex justify-between"
+		top-0 left-0 w-full flex justify-between z-1"
 >
 	<!-- left side -->
 	<section class="flex items-center">
