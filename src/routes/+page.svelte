@@ -39,13 +39,14 @@
 				<div class="icon-medical-services" />
 				<span class="font-bold">Pelayanan kami</span>
 			</a>
-			<button
+			<a
 				class="inline-flex space-x-2 px-6 py-3 uppercase rounded-full border border-emerald-400
 					mt-2 text-emerald-500 bg-gray-200 bg-opacity-50 shadow hover:bg-gray-300 md:(ml-2 mt-0 px-6 py-4)"
+				href="#contacts"
 			>
 				<div class="icon-near-me" />
 				<span class="font-bold">Berkunjung</span>
-			</button>
+			</a>
 		</div>
 	</section>
 
