@@ -3,6 +3,7 @@
 	import SectionPhysician from './section-physician.svelte';
 	import SectionService from './section-service.svelte';
 	import TopBar from './top-bar.svelte';
+	import SectionContact from './section-contact.svelte';
 </script>
 
 <TopBar />
@@ -51,7 +52,5 @@
 
 	<SectionPhysician />
 
-	<section id="contacts" class="h-screen">
-		<!-- TODO -->
-	</section>
+	<SectionContact />
 </article>

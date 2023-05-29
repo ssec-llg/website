@@ -21,6 +21,7 @@ Novadianaz
 Onkologi
 persistable
 phaco
+Pingin
 Putria
 Refraktif
 Rekontruksi
@@ -29,6 +30,8 @@ Salim
 Silampari
 slitlamp
 Sriwijaya
+Sudarso
+Taba
 tonometri
 Usman
 Vitreoretina
