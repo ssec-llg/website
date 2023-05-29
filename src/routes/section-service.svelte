@@ -8,8 +8,7 @@
 	import usg_mata from '$lib/assets/service__usg-mata.jpg';
 </script>
 
-<section id="services" class="my-16">
-	<!-- TODO -->
+<section id="services" class="py-16">	
 	<p class="m-4 md:m-8 text-center text-3xl font-bold uppercase">Pelayanan Kami</p>
 	<article class="grid md:grid-cols-2 mx-8 mb-16 md:(mt-16 mb-36)">
 		<!-- services text detail -->
