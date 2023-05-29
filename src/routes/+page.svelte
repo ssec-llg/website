@@ -1,4 +1,5 @@
 <script>
+	import { PUBLIC_APP_NAME } from '$env/static/public';
 	import { fade } from 'svelte/transition';
 	import SectionContact from './section-contact.svelte';
 	import SectionPhysician from './section-physician.svelte';
@@ -53,4 +54,11 @@
 	<SectionPhysician />
 
 	<SectionContact />
+
+	<footer class="text-center m-4">
+		<p class="p-4 md:py-8">
+			&copy; 2023 Made with <span class="icon-favorite text-emerald-500" /> by
+			<a class="hover:underline" href="/">{PUBLIC_APP_NAME} Lubuklinggau</a>
+		</p>
+	</footer>
 </article>
