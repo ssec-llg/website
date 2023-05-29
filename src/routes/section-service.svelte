@@ -8,9 +8,9 @@
 	import usg_mata from '$lib/assets/service__usg-mata.jpg';
 </script>
 
-<section id="services" class="py-16">	
+<section id="services" class="py-16 bg-zinc-200/50">
 	<p class="m-4 md:m-8 text-center text-3xl font-bold uppercase">Pelayanan Kami</p>
-	<article class="grid md:grid-cols-2 mx-8 mb-16 md:(mt-16 mb-36)">
+	<article class="grid md:grid-cols-2 mx-8 mb-16 md:(mt-16 mb-36 px-8 mx-a) max-w-5xl">
 		<!-- services text detail -->
 		<section class="space-y-4">
 			<article>
@@ -50,13 +50,21 @@
 
 		<!-- service images -->
 		<section class="grid grid-cols-3 gap-2 mt-8 md:mt-0">
-			<img class="-rotate-4" src={fundus} alt="Fotofundus" />
-			<img class="rotate-2 row-span-2" src={nd_yag} alt="Laser Nd-YAG" />
-			<img class="-rotate-1" src={pascal} alt="Laser Pascal" />
-			<img class="rotate-3" src={slitlamp} alt="Slitlamp" />
-			<img class="rotate-2 row-span-2" src={specular} alt="Specular Microscope" />
-			<img class="-rotate-2" src={tonometri} alt="Tonometri" />
-			<img class="-mt-4 rotate-3" src={usg_mata} alt="USG Mata" />
+			<img class="border-4 border-white shadow -rotate-4" src={fundus} alt="Fotofundus" />
+			<img
+				class="border-4 border-white shadow rotate-2 row-span-2"
+				src={nd_yag}
+				alt="Laser Nd-YAG"
+			/>
+			<img class="border-4 border-white shadow -rotate-1" src={pascal} alt="Laser Pascal" />
+			<img class="border-4 border-white shadow rotate-3" src={slitlamp} alt="Slitlamp" />
+			<img
+				class="border-4 border-white shadow rotate-2 row-span-2"
+				src={specular}
+				alt="Specular Microscope"
+			/>
+			<img class="border-4 border-white shadow -rotate-2" src={tonometri} alt="Tonometri" />
+			<img class="border-4 border-white shadow -mt-4 rotate-3" src={usg_mata} alt="USG Mata" />
 		</section>
 	</article>
 </section>

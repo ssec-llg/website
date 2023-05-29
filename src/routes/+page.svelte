@@ -55,8 +55,8 @@
 
 	<SectionContact />
 
-	<footer class="text-center m-4">
-		<p class="p-4 md:py-8">
+	<footer class="text-center p-4 bg-gradient-to-b from-zinc-200 to-white">
+		<p class="p-4 md:py-8 text-neutral-500">
 			&copy; 2023 Made with <span class="icon-favorite text-emerald-500" /> by
 			<a class="hover:underline" href="/">{PUBLIC_APP_NAME} Lubuklinggau</a>
 		</p>

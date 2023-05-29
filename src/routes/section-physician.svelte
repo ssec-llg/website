@@ -61,7 +61,10 @@
 	];
 </script>
 
-<section id="physicians" class="py-16 bg-pink-100">
+<section
+	id="physicians"
+	class="py-16 bg-gradient-to-rb from-emerald-100 via-pink-100 to-violet-200"
+>
 	<p class="m-4 md:m-8 text-center text-3xl font-bold uppercase">Dokter Spesialis</p>
 	<article class="grid justify-center gap-4 mb-16 max-w-3xl md:(grid-cols-6 mt-16 mb-36 mx-a)">
 		{#each physicians as [name, specialistic, image, classes]}
