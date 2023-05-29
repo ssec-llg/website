@@ -2,6 +2,8 @@
 	import { fade, fly } from 'svelte/transition';
 
 	let sidebar_shown = false;
+	let lift = false;
+
 	const menu = [
 		['#services', 'Pelayanan', 'icon-medical-services'],
 		['#physicians', 'Dokter Spesialis', 'icon-group'],
@@ -9,10 +11,24 @@
 	];
 </script>
 
-<nav class="absolute top-0 left-0 w-full flex justify-between p-4 md:p-8">
+<svelte:window
+	on:scroll|passive={() => {
+		const scrolled_height = window.pageYOffset;
+		const viewport_height = window.innerHeight;
+		// is scrolled more than the height of the screen
+		lift = scrolled_height > viewport_height;
+	}}
+/>
+
+<nav
+	class="{lift
+		? 'fixed md:px-4 border-b shadow bg-default'
+		: 'absolute p-4 md:p-8'} transition-all duration-300
+		top-0 left-0 w-full flex justify-between"
+>
 	<!-- left side -->
 	<section>
-		<a class="flex items-center space-x-2 p-4" href="/">
+		<a class="flex items-center space-x-2 p-4 py-2" href="/">
 			<div class="i-brand-ssec?mask fill-current h-10 w-14 md:(h-10 w-16) text-emerald-500" />
 		</a>
 	</section>
@@ -21,18 +37,17 @@
 	<section class="flex items-center justify-end space-x-6 w-full">
 		<!-- mobile toggle menu -->
 		<button
-			class="text-3xl leading-none p-4 bg-transparent md:hidden"
+			class="text-3xl leading-none p-4 py-2 bg-transparent md:hidden"
 			on:click={() => (sidebar_shown = true)}
 		>
 			<div class="icon-menu" />
 		</button>
 
 		<!-- tablet or desktop menu -->
-		<article class="space-x-4">
+		<article class="space-x-4 hidden md:block">
 			{#each menu as [href, text]}
 				<a
-					class="text-xl leading-none font-semibold uppercase p-4 hidden
-						md:(inline) hover:(opacity-70 underline)"
+					class="text-xl leading-none font-semibold uppercase p-4 hover:(opacity-70 underline)"
 					on:click={() => (sidebar_shown = false)}
 					data-sveltekit-replacestate
 					{href}
