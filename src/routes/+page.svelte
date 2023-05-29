@@ -1,5 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import SectionPhysician from './section-physician.svelte';
 	import SectionService from './section-service.svelte';
 	import TopBar from './top-bar.svelte';
 </script>
@@ -48,9 +49,7 @@
 
 	<SectionService />
 
-	<section id="physicians" class="h-screen bg-pink-200">
-		<!-- TODO -->
-	</section>
+	<SectionPhysician />
 
 	<section id="contacts" class="h-screen">
 		<!-- TODO -->
