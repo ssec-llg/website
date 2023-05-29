@@ -1,9 +1,9 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import SectionContact from './section-contact.svelte';
 	import SectionPhysician from './section-physician.svelte';
 	import SectionService from './section-service.svelte';
 	import TopBar from './top-bar.svelte';
-	import SectionContact from './section-contact.svelte';
 </script>
 
 <TopBar />
