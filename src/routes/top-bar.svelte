@@ -27,7 +27,7 @@
 					}
 				}
 			},
-			{ root: null, rootMargin: '0px', threshold: 0.5 }
+			{ root: null, rootMargin: '0px', threshold: 0.2 }
 		);
 		for (const section of menu_sections) {
 			menu_observer.observe(section);
