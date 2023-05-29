@@ -1,14 +1,42 @@
 <script>
+	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 
-	let sidebar_shown = false;
-	let lift = false;
+	/** @type {boolean} */ let sidebar_shown = false;
+	/** @type {boolean} */ let lift = false;
+	/** @type {string | undefined} */ let active_section_id;
 
 	const menu = [
 		['#services', 'Pelayanan', 'icon-medical-services'],
 		['#physicians', 'Dokter Spesialis', 'icon-group'],
 		['#contacts', 'Kontak', 'icon-contacts']
 	];
+
+	function setup_menu_states() {
+		if (!browser) return;
+		const menu_sections_ids = menu.map((r) => r[0]).join(', ');
+		const menu_sections = document.querySelectorAll(menu_sections_ids);
+		const menu_observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						active_section_id = '#' + entry.target.id;
+					} else if (active_section_id === entry.target.id || !lift) {
+						active_section_id = undefined;
+					}
+				}
+			},
+			{ root: null, rootMargin: '0px', threshold: 0.5 }
+		);
+		for (const section of menu_sections) {
+			menu_observer.observe(section);
+		}
+	}
+
+	onMount(() => {
+		setup_menu_states();
+	});
 </script>
 
 <svelte:window
@@ -16,7 +44,7 @@
 		const scrolled_height = window.pageYOffset;
 		const viewport_height = window.innerHeight;
 		// is scrolled more than the height of the screen
-		lift = scrolled_height > viewport_height;
+		lift = scrolled_height > viewport_height - 10;
 	}}
 />
 
@@ -47,7 +75,8 @@
 		<article class="space-x-4 hidden md:block">
 			{#each menu as [href, text]}
 				<a
-					class="text-xl leading-none font-semibold uppercase p-4 hover:(opacity-70 underline)"
+					class="text-xl leading-none font-semibold uppercase p-4 hover:(opacity-70 underline)
+						{active_section_id === href ? 'border-b-2 border-emerald-500' : ''}"
 					on:click={() => (sidebar_shown = false)}
 					data-sveltekit-replacestate
 					{href}
@@ -73,6 +102,7 @@
 			{#each menu as [href, text, icon]}
 				<a
 					class="flex items-center space-x-2 text-lg leading-none font-semibold uppercase py-2"
+					class:text-emerald-500={active_section_id === href}
 					on:click={() => (sidebar_shown = false)}
 					data-sveltekit-replacestate
 					{href}
