@@ -55,14 +55,18 @@
 		top-0 left-0 w-full flex justify-between"
 >
 	<!-- left side -->
-	<section>
-		<a class="flex items-center space-x-2 p-4 py-2" href="/">
+	<section class="flex items-center">
+		<a class="p-4 py-2" href="/">
 			<div class="i-brand-ssec?mask fill-current h-10 w-14 md:(h-10 w-16) text-emerald-500" />
 		</a>
+		{#if active_section_id}
+			{@const [, title] = menu.find((item) => item[0] === active_section_id) || []}
+			<p class="font-bold text-xl md:hidden">{title ?? ''}</p>
+		{/if}
 	</section>
 
 	<!-- right side -->
-	<section class="flex items-center justify-end space-x-6 w-full">
+	<section class="flex items-center justify-end space-x-6">
 		<!-- mobile toggle menu -->
 		<button
 			class="text-3xl leading-none p-4 py-2 bg-transparent md:hidden"
