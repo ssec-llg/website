@@ -26,6 +26,21 @@
 		>
 			<div class="icon-menu" />
 		</button>
+
+		<!-- tablet or desktop menu -->
+		<article class="space-x-4">
+			{#each menu as [href, text]}
+				<a
+					class="text-xl leading-none font-semibold uppercase p-4 hidden
+						md:(inline) hover:(opacity-70 underline)"
+					on:click={() => (sidebar_shown = false)}
+					data-sveltekit-replacestate
+					{href}
+				>
+					<span>{text}</span>
+				</a>
+			{/each}
+		</article>
 	</section>
 </nav>
 
