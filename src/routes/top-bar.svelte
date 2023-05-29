@@ -34,19 +34,21 @@
 		}
 	}
 
-	onMount(() => {
-		setup_menu_states();
-	});
-</script>
-
-<svelte:window
-	on:scroll|passive={() => {
+	function set_lift_state() {
+		if (!browser) return;
 		const scrolled_height = window.pageYOffset;
 		const viewport_height = window.innerHeight;
 		// is scrolled more than the height of the screen
 		lift = scrolled_height > viewport_height - 10;
-	}}
-/>
+	}
+
+	onMount(() => {
+		setup_menu_states();
+		set_lift_state();
+	});
+</script>
+
+<svelte:window on:scroll|passive={set_lift_state} />
 
 <nav
 	class="{lift
