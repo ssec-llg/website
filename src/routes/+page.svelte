@@ -1,35 +1,9 @@
 <script>
 	import { fade } from 'svelte/transition';
-
-	const menu = [
-		['#services', 'Pelayanan'],
-		['#physicians', 'Dokter'],
-		['#contacts', 'Kontak']
-	];
+	import TopBar from './top-bar.svelte';
 </script>
 
-<nav class="absolute top-0 w-full flex justify-between p-4 md:p-8">
-	<section>
-		<a class="flex items-center space-x-2 p-4" href="/">
-			<div class="i-brand-ssec?mask fill-current h-10 w-14 md:(h-10 w-16) text-emerald-500" />
-		</a>
-	</section>
-	<section class="flex items-center space-x-6">
-		{#each menu as [href, text]}
-			<a
-				class="text-xl leading-none font-semibold uppercase p-4 hidden md:block
-					hover:(opacity-70 underline)"
-				data-sveltekit-replacestate
-				{href}
-			>
-				{text}
-			</a>
-		{/each}
-		<button class="text-3xl leading-none p-4 bg-transparent md:hidden">
-			<div class="icon-menu" />
-		</button>
-	</section>
-</nav>
+<TopBar />
 
 <article
 	transition:fade
