@@ -1,5 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import SectionService from './section-service.svelte';
 	import TopBar from './top-bar.svelte';
 </script>
 
@@ -45,9 +46,7 @@
 		</div>
 	</section>
 
-	<section id="services" class="h-screen">
-		<!-- TODO	 -->
-	</section>
+	<SectionService />
 
 	<section id="physicians" class="h-screen bg-pink-200">
 		<!-- TODO -->
