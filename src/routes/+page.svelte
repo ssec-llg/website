@@ -54,8 +54,10 @@
 
 	<footer class="text-center p-4 bg-gradient-to-b from-zinc-200 to-white">
 		<p class="p-4 md:py-8 text-neutral-500">
-			&copy; 2023 Made with <span class="icon-favorite text-emerald-500" /> by
-			<a class="hover:underline" href="/">{PUBLIC_APP_NAME} Lubuklinggau</a>
+			&copy;2023 Dibuat dengan <span class="icon-favorite text-emerald-500" /> oleh
+			<a class="text-emerald-500 hover:underline" href="https://github.com/ssec-lab">
+				{PUBLIC_APP_NAME}
+			</a> di Lubuklinggau
 		</p>
 	</footer>
 </article>

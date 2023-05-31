@@ -66,7 +66,7 @@
 	class="py-16 bg-gradient-to-rb from-emerald-100 via-pink-100 to-violet-200"
 >
 	<p class="m-4 md:m-8 text-center text-3xl font-bold uppercase">Dokter Spesialis</p>
-	<article class="grid justify-center gap-4 mb-16 max-w-3xl md:(grid-cols-6 mt-16 mb-36 mx-a)">
+	<article class="grid justify-center gap-4 mb-16 max-w-4xl md:(grid-cols-6 mt-16 mb-36 mx-a)">
 		{#each physicians as [name, specialistic, image, classes]}
 			<section class="p-4 text-center {classes}">
 				<picture class="flex justify-center">
@@ -77,8 +77,8 @@
 						alt="{name} - {specialistic}"
 					/>
 				</picture>
-				<p class="font-semibold">{name}</p>
-				<hr class="border-emerald-300 max-w-48 mx-a my-1" />
+				<p class="font-semibold text-lg">{name}</p>
+				<hr class="border-emerald-300 max-w-48 mx-a" />
 				<p class="text-neutral-500">{specialistic}</p>
 			</section>
 		{/each}

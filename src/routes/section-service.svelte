@@ -6,6 +6,19 @@
 	import specular from '$lib/assets/service__specular-microscope.jpg';
 	import tonometri from '$lib/assets/service__tonometri.jpg';
 	import usg_mata from '$lib/assets/service__usg-mata.jpg';
+	import phaco from '$lib/assets/service__phaco.jpg';
+
+	const pictures = [
+		// classes, image, alt
+		['-rotate-3', slitlamp, 'Slitlamp'],
+		['rotate-4', fundus, 'Fotofundus'],
+		['-rotate-3', usg_mata, 'USG Mata'],
+		['-mt-2 rotate-2', tonometri, 'Tonometri'],
+		['-rotate-1', pascal, 'Laser Pascal'],
+		['rotate-2', specular, 'Specular Microscope'],
+		['-mt-4 -rotate-2 row-span-3 col-span-2', phaco, 'Phaco emulsification'],
+		['rotate-2 row-span-2', nd_yag, 'Laser Nd-YAG']
+	];
 </script>
 
 <section id="services" class="py-16 bg-zinc-200/50">
@@ -15,7 +28,7 @@
 		<section class="space-y-4">
 			<article>
 				<p class="font-semibold text-xl">Pelayanan Kesehatan Mata</p>
-				<ol class="list-disc ml-4.5">
+				<ol class="list-disc ml-4.5 text-lg">
 					<li>Katarak dan Bedah Refraktif</li>
 					<li>Medical, Bedah Retina, & Laser Fotokoagulasi Retina</li>
 					<li>Glaucoma</li>
@@ -28,7 +41,7 @@
 
 			<article>
 				<p class="font-semibold text-xl">Pelayanan Laser</p>
-				<ol class="list-disc ml-4.5">
+				<ol class="list-disc ml-4.5 text-lg">
 					<li>PASCAL Fotokoagulasi Retina</li>
 					<li>NdYAG Laser Katarak Sekunder</li>
 					<li>Laser Iridotomi</li>
@@ -37,7 +50,7 @@
 
 			<article>
 				<p class="font-semibold text-xl">Alat Diagnosis Canggih</p>
-				<ol class="list-disc ml-4.5">
+				<ol class="list-disc ml-4.5 text-lg">
 					<li>USG A/B Scan</li>
 					<li>Funduskopi Indirect</li>
 					<li>Fotofundus Retina</li>
@@ -49,22 +62,10 @@
 		</section>
 
 		<!-- service images -->
-		<section class="grid grid-cols-3 gap-2 mt-8 md:mt-0">
-			<img class="border-4 border-white shadow -rotate-4" src={fundus} alt="Fotofundus" />
-			<img
-				class="border-4 border-white shadow rotate-2 row-span-2"
-				src={nd_yag}
-				alt="Laser Nd-YAG"
-			/>
-			<img class="border-4 border-white shadow -rotate-1" src={pascal} alt="Laser Pascal" />
-			<img class="border-4 border-white shadow rotate-3" src={slitlamp} alt="Slitlamp" />
-			<img
-				class="border-4 border-white shadow rotate-2 row-span-2"
-				src={specular}
-				alt="Specular Microscope"
-			/>
-			<img class="border-4 border-white shadow -rotate-2" src={tonometri} alt="Tonometri" />
-			<img class="border-4 border-white shadow -mt-4 rotate-3" src={usg_mata} alt="USG Mata" />
+		<section class="grid grid-cols-3 gap-2 mt-8 md:mt-0 content-start">
+			{#each pictures as [classes, src, alt]}
+				<img class="border-4 border-white shadow {classes}" {src} {alt} />
+			{/each}
 		</section>
 	</article>
 </section>
