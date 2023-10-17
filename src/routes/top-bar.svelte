@@ -99,6 +99,7 @@
 </nav>
 
 {#if sidebar_shown}
+	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 	<aside
 		class="fixed top-0 left-0 h-full w-full z-10 bg-neutral-400/50"
 		transition:fade|local
