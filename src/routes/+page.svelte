@@ -2,8 +2,11 @@
 	import { PUBLIC_APP_NAME } from '$env/static/public';
 	import SectionContact from './section-contact.svelte';
 	import SectionPhysician from './section-physician.svelte';
+	import SectionSchedule from './section-schedule.svelte';
 	import SectionService from './section-service.svelte';
 	import TopBar from './top-bar.svelte';
+
+	export let data;
 </script>
 
 <TopBar />
@@ -49,6 +52,8 @@
 	<SectionService />
 
 	<SectionPhysician />
+
+	<SectionSchedule schedules={data.lazy.physicianSchedules} />
 
 	<SectionContact />
 
