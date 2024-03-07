@@ -2,8 +2,11 @@
 	import { PUBLIC_APP_NAME } from '$env/static/public';
 	import SectionContact from './section-contact.svelte';
 	import SectionPhysician from './section-physician.svelte';
+	import SectionSchedule from './section-schedule.svelte';
 	import SectionService from './section-service.svelte';
 	import TopBar from './top-bar.svelte';
+
+	export let data;
 </script>
 
 <TopBar />
@@ -11,8 +14,8 @@
 <article class="h-screen bg-contain bg-no-repeat bg-right-bottom bg-[url(/bg-main-hero.svg)]">
 	<section class="flex h-full">
 		<div class="my-auto mx-8 md:ml-16">
-			<p class="text-5xl mb-4 md:mb-1 font-semibold text-gray-700">
-				Inovatif. Profesional. Bersahabat.
+			<p class="text-5xl mb-4 md:mb-1 font-semibold text-gray-700" style="text-wrap: balance;">
+				Kesehatan Mata Anda adalah Prioritas Kami
 			</p>
 			<p class="text-lg md:text-xl text-gray-600 md:max-w-2xl">
 				Silampari Sriwijaya Eye Centre atau biasa disebut SSEC adalah Pusat Pelayanan Kesehatan
@@ -49,6 +52,8 @@
 	<SectionService />
 
 	<SectionPhysician />
+
+	<SectionSchedule schedules={data.lazy.physicianSchedules} />
 
 	<SectionContact />
 

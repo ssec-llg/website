@@ -10,6 +10,7 @@
 	const menu = [
 		['#services', 'Pelayanan', 'icon-medical-services'],
 		['#physicians', 'Dokter Spesialis', 'icon-group'],
+		['#schedules', 'Jadwal Praktik', 'icon-calendar-month'],
 		['#contacts', 'Kontak', 'icon-contacts']
 	];
 
