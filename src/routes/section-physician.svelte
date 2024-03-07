@@ -15,7 +15,7 @@
 			'md:col-span-3'
 		],
 		[
-			'dr. Wini Putria Marindah, Sp.M', //
+			'dr. Wini Putria Marindah, Sp.M, MARS, FISQua.', //
 			'Spesialis Mata',
 			dr_wini,
 			'md:col-span-2'
