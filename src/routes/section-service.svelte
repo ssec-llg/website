@@ -31,9 +31,6 @@
 				<ol class="list-disc ml-4.5 text-lg">
 					<li>Katarak dan Bedah Refraktif</li>
 					<li>Medical, Bedah Retina, & Laser Fotokoagulasi Retina</li>
-					<li>Glaucoma</li>
-					<li>Onkologi (Tumor Mata)</li>
-					<li>Rekontruksi (Bedah Plastik Mata)</li>
 					<li>Infeksi Imunologi</li>
 					<li>Spesialistik Mata Umum</li>
 				</ol>
