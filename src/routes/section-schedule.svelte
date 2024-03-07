@@ -3,12 +3,10 @@
 	export let schedules;
 </script>
 
-<section id="schedules" class="py-16 bg-white dark:bg-dark">
+<section id="schedules" class="py-16 bg-white dark:bg-dark mb-16 md:mb-36">
 	<p class="m-4 md:m-8 text-center text-3xl font-bold uppercase">Jadwal Praktik</p>
 
-	<article
-		class="flex flex-wrap justify-center gap-2 mb-16 mx-6 max-w-4xl md:(mt-16 mb-36 mx-a gap-4)"
-	>
+	<article class="flex flex-wrap justify-center gap-2 mx-6 max-w-4xl md:(mt-16 mx-a gap-4)">
 		{#await schedules}
 			<span>Loading ...</span>
 		{:then s}
@@ -30,4 +28,8 @@
 			<span>Error: {e?.message || 'Unknown error'}</span>
 		{/await}
 	</article>
+
+	<p class="m-4 md:m-8 text-center italic text-neutral-500">
+		Jadwal akan diperbaruhi di setiap awal minggu
+	</p>
 </section>
