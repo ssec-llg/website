@@ -1,5 +1,6 @@
 <script>
 	import { PUBLIC_APP_NAME } from '$env/static/public';
+	import AccrCert from '$lib/assets/ssec-accr-cert-20231106.pdf';
 	import SectionContact from './section-contact.svelte';
 	import SectionPhysician from './section-physician.svelte';
 	import SectionSchedule from './section-schedule.svelte';
@@ -18,11 +19,23 @@
 				Kesehatan Mata Anda adalah Prioritas Kami
 			</p>
 			<p class="text-lg md:text-xl text-gray-600 md:max-w-2xl">
-				Silampari Sriwijaya Eye Centre atau biasa disebut SSEC adalah Pusat Pelayanan Kesehatan
-				Spesialistik Mata Terpadu (Klinik Utama Mata) yang berada di Kota
+				Silampari Sriwijaya Eye Centre merupakan Pusat Pelayanan Kesehatan Spesialistik Mata Terpadu
+				terakreditasi <a
+					class="underline text-emerald-700"
+					href={AccrCert}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Paripurna <div class="inline-flex text-yellow-500">
+						{#each { length: 5 } as _}
+							<div class="icon-star"></div>
+						{/each}
+					</div>
+				</a>
+				yang berada di Kota
 				<a
-					class="underline"
-					href="http://g.page/lubuklinggau"
+					class="underline text-emerald-700"
+					href="http://g.page/ssec-llg"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
