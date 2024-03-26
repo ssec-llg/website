@@ -26,11 +26,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Paripurna <div class="inline-flex text-yellow-500">
-						{#each { length: 5 } as _}
-							<div class="icon-star"></div>
-						{/each}
-					</div>
+					Paripurna
 				</a>
 				yang berada di Kota
 				<a
