@@ -29,7 +29,8 @@
 		{/await}
 	</article>
 
-	<p class="m-4 md:m-8 text-center italic text-neutral-500">
+	<p class="m-4 md:m-8 text-center text-neutral-500">
+		<span class="icon-info-outline -mt-1" />
 		Jadwal akan diperbaruhi di setiap awal minggu
 	</p>
 </section>
